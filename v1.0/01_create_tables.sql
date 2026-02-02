@@ -1,72 +1,48 @@
-CREATE DATABASE tecnocasa_db
-CHARACTER SET utf8mb4
-COLLATE utf8mb4_general_ci;
-
-USE tecnocasa_db;
-
--- =========================
--- TABELA: CATEGORIAS
--- =========================
+-- CATEGORIAS
 CREATE TABLE categorias (
-  id_categoria INT NOT NULL AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL,
-  descricao VARCHAR(255),
-  PRIMARY KEY (id_categoria)
-) ENGINE=MyISAM
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci;
+    id_categoria INT PRIMARY KEY AUTO_INCREMENT,
+    nome_categoria VARCHAR(100) NOT NULL UNIQUE,
+    descricao VARCHAR(255)
+);
 
--- =========================
--- TABELA: FORNECEDORES
--- =========================
+-- FORNECEDORES
 CREATE TABLE fornecedores (
-  id_fornecedor INT NOT NULL AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL,
-  cnpj VARCHAR(18),
-  telefone VARCHAR(20),
-  email VARCHAR(100),
-  cidade VARCHAR(60),
-  estado CHAR(2),
-  ativo TINYINT(1) DEFAULT 1,
-  PRIMARY KEY (id_fornecedor)
-) ENGINE=MyISAM
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci;
+    id_fornecedor INT PRIMARY KEY AUTO_INCREMENT,
+    nome_fornecedor VARCHAR(150) NOT NULL,
+    cnpj VARCHAR(18) UNIQUE,
+    telefone VARCHAR(20),
+    email VARCHAR(150),
+    cidade VARCHAR(100),
+    estado CHAR(2)
+);
 
--- =========================
--- TABELA: CLIENTES
--- =========================
+-- CLIENTES
 CREATE TABLE clientes (
-  id_clientes INT NOT NULL AUTO_INCREMENT,
-  nome VARCHAR(100) NOT NULL,
-  cpf VARCHAR(14),
-  email VARCHAR(100),
-  telefone VARCHAR(20),
-  data_nascimento DATE,
-  cidade VARCHAR(60),
-  estado CHAR(2),
-  data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
-  ativo TINYINT(1) DEFAULT 1,
-  PRIMARY KEY (id_clientes)
-) ENGINE=MyISAM
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci;
+    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(150) NOT NULL,
+    cpf VARCHAR(14) UNIQUE,
+    email VARCHAR(150),
+    telefone VARCHAR(20),
+    data_nascimento DATE,
+    cidade VARCHAR(100),
+    estado CHAR(2),
+    ativo TINYINT(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- =========================
--- TABELA: PRODUTOS
--- =========================
+-- PRODUTOS
 CREATE TABLE produtos (
-  id_produto INT NOT NULL AUTO_INCREMENT,
-  nome VARCHAR(120) NOT NULL,
-  descricao TEXT,
-  preco DECIMAL(10,2) NOT NULL,
-  estoque INT NOT NULL DEFAULT 0,
-  id_categoria INT NOT NULL,
-  id_fornecedor INT NOT NULL,
-  ativo TINYINT(1) DEFAULT 1,
-  PRIMARY KEY (id_produto),
-  KEY fk_produto_categoria (id_categoria),
-  KEY fk_produto_fornecedor (id_fornecedor)
-) ENGINE=MyISAM
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci;
+    id_produto INT PRIMARY KEY AUTO_INCREMENT,
+    nome_produto VARCHAR(150) NOT NULL,
+    descricao VARCHAR(255),
+    preco DECIMAL(10,2) NOT NULL,
+    id_categoria INT NOT NULL,
+    id_fornecedor INT NOT NULL,
+
+    CONSTRAINT fk_produtos_categoria
+        FOREIGN KEY (id_categoria)
+        REFERENCES categorias(id_categoria),
+
+    CONSTRAINT fk_produtos_fornecedor
+        FOREIGN KEY (id_fornecedor)
+        REFERENCES fornecedores(id_fornecedor)
+);
