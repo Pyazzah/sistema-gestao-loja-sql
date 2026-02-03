@@ -1,86 +1,122 @@
-# 🛒 Sistema de Gestão de Loja – SQL
+🛒 Sistema de Gestão de Loja – SQL
 
-Projeto de estudo em **SQL** voltado à modelagem, organização e análise de dados de um banco de dados de uma loja de varejo.
+Projeto de estudo em SQL, focado na modelagem, organização e análise de dados de um banco de dados de uma loja de varejo.
+O projeto é estruturado de forma incremental, com versões que evoluem passo a passo.
 
----
+📌 Versões do Projeto
 
-## 📌 Versões do Projeto
-- **v1.0** — Criação do banco de dados, tabelas e inserção de dados  
-- **v1.1** — Consultas SQL para análise e extração de informações  
+v1.0 — Criação do banco de dados, tabelas e inserção de dados
 
----
+v1.1 — Consultas SQL para análise e extração de informações
 
-## 📦 Estrutura do Banco de Dados
-O banco é composto pelas seguintes tabelas relacionais:
+v1.2 — Aprimoramentos de tabela e consultas analíticas:
 
-- **Categorias**
-- **Fornecedores**
-- **Clientes**
-- **Produtos**
+Adição de colunas de datas automáticas em clientes (Criado_em e atualizado_em)
 
-Todas as tabelas seguem boas práticas de modelagem, com uso de:
-- Chaves primárias  
-- Chaves estrangeiras  
-- Relacionamentos entre entidades  
+Criação de índices para otimização de consultas:
 
----
+idx_produtos_categorias em produtos(id_categoria)
 
-## 📊 Consultas SQL (v1.1)
-A versão **v1.1** adiciona consultas analíticas, incluindo:
+idx_clientes_estado em clientes(estado)
 
-- Produtos com suas categorias  
-- Produtos com seus fornecedores  
-- Quantidade de produtos por categoria  
-- Preço médio por categoria  
-- Produto mais caro do cadastro  
-- Produtos acima da média de preço  
-- Fornecedores com total de produtos cadastrados  
-- Clientes ativos  
-- Total de clientes por estado  
-- Visão geral do banco (indicadores básicos)  
+Novas consultas SQL aproveitando as melhorias:
 
-Essas consultas simulam análises comuns em rotinas de **Análise de Dados**.
+Clientes cadastrados recentemente
 
----
+Clientes atualizados recentemente
 
-## 🛠️ Tecnologias Utilizadas
-- **MySQL**
-- **SQL**
-- **GitHub** (versionamento)
+Produtos com preço positivo (CHECK)
 
----
+Produtos por categoria
 
-## 🎯 Objetivo do Projeto
-Projeto criado com fins **educacionais**, com foco no desenvolvimento de habilidades em:
+Clientes por estado
 
-- Modelagem de banco de dados relacional  
-- Criação e uso de chaves primárias e estrangeiras  
-- Escrita de scripts SQL organizados e versionados  
-- Consultas analíticas com SQL  
-- Boas práticas em banco de dados  
-- Versionamento de código com GitHub  
+Produtos acima da média de preço
 
----
+Visão geral do banco
 
-## 📁 Organização dos Scripts
-Os scripts SQL estão organizados por versão e responsabilidade:
+📦 Estrutura do Banco de Dados
 
+O banco de dados é composto pelas seguintes tabelas relacionais:
+
+Categorias
+
+Fornecedores
+
+Clientes
+
+Produtos
+
+Boas práticas aplicadas:
+
+Chaves primárias e estrangeiras
+
+Relacionamentos entre entidades
+
+Regras de integridade de dados (CHECK, NOT NULL)
+
+Auditoria básica (Criado_em, atualizado_em)
+
+📊 Consultas SQL
+
+v1.1 — Consultas básicas de análise de dados
+
+v1.2 — Consultas aprimoradas, utilizando:
+
+Colunas de datas automáticas
+
+Índices para consultas mais rápidas
+
+Filtragem por regras de negócio (ex.: preços positivos)
+
+As consultas contemplam análises comuns em rotinas de Análise de Dados e demonstram evolução no uso de SQL avançado.
+
+🛠️ Tecnologias Utilizadas
+
+MySQL
+
+SQL
+
+GitHub (versionamento e organização de versões)
+
+🎯 Objetivo do Projeto
+
+Desenvolver habilidades práticas em:
+
+Modelagem de banco de dados relacional
+
+Criação e manutenção de tabelas com boas práticas
+
+Escrita de scripts SQL organizados e versionados
+
+Consultas analíticas usando filtros, joins, agregações e regras de negócio
+
+Otimização de consultas com índices
+
+Auditoria básica de dados (Criado_em e atualizado_em)
+
+Versionamento de código e documentação profissional no GitHub
+
+📁 Organização dos Scripts
 v1.0/
+    00_create_database.sql
+    01_create_tables.sql
+    02_insert_categorias.sql
+    03_insert_fornecedores.sql
+    04_insert_clientes.sql
+    05_insert_produtos.sql
 
-  - Criação do banco de dados
+v1.1/
+    01_consultas.sql
 
-  - Criação das tabelas
+v1.2/
+    alter_table_datas.sql        -- Colunas Criado_em e atualizado_em
+    index_produtos_clientes.sql  -- Criação de índices
+    01_consultas_v1.2.sql       -- Consultas usando datas, check e índices
 
-  - Inserção de dados
 
- v1.1/
+Esta estrutura facilita a manutenção, evolução e compreensão do projeto, mostrando claramente a progressão entre versões.
 
-  - Consultas SQL
+👤 Autor
 
-    
-Essa estrutura facilita a manutenção, evolução e entendimento do projeto.
-
----
-
-## 👤 Autor
-**Isaías Piazza Machado**
+Isaías Piazza Machado
