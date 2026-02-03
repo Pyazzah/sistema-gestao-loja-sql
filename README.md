@@ -1,4 +1,4 @@
-![Tecnocasa Banner](v1.2/assets/banner_tecnocasa.png)
+
 # 🛒 Sistema de Gestão de Loja – SQL
 
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
