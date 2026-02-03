@@ -5,97 +5,71 @@ O projeto é estruturado de forma incremental, com versões que evoluem passo a 
 
 📌 Versões do Projeto
 
-v1.0 — Criação do banco de dados, tabelas e inserção de dados
+• v1.0 — Criação do banco de dados, tabelas e inserção de dados
+• v1.1 — Consultas SQL para análise e extração de informações
+• v1.2 — Aprimoramentos de tabela e consultas analíticas:
 
-v1.1 — Consultas SQL para análise e extração de informações
+    • Adição de colunas de datas automáticas em clientes (Criado_em e atualizado_em)
+    • Criação de índices para otimização de consultas:
+        • idx_produtos_categorias em produtos(id_categoria)
+        • idx_clientes_estado em clientes(estado)
 
-v1.2 — Aprimoramentos de tabela e consultas analíticas:
+• Novas consultas SQL aproveitando as melhorias:
 
-Adição de colunas de datas automáticas em clientes (Criado_em e atualizado_em)
+    • Clientes cadastrados recentemente
+    • Clientes atualizados recentemente
+    • Produtos com preço positivo (CHECK)
+    • Produtos por categoria
+    • Clientes por estado
+    • Produtos acima da média de preço
+    • Visão geral do banco
 
-Criação de índices para otimização de consultas:
-
-idx_produtos_categorias em produtos(id_categoria)
-
-idx_clientes_estado em clientes(estado)
-
-Novas consultas SQL aproveitando as melhorias:
-
-Clientes cadastrados recentemente
-
-Clientes atualizados recentemente
-
-Produtos com preço positivo (CHECK)
-
-Produtos por categoria
-
-Clientes por estado
-
-Produtos acima da média de preço
-
-Visão geral do banco
 
 📦 Estrutura do Banco de Dados
 
 O banco de dados é composto pelas seguintes tabelas relacionais:
 
-Categorias
+• Categorias
+• Fornecedores
+• Clientes
+• Produtos
 
-Fornecedores
-
-Clientes
-
-Produtos
 
 Boas práticas aplicadas:
 
-Chaves primárias e estrangeiras
-
-Relacionamentos entre entidades
-
-Regras de integridade de dados (CHECK, NOT NULL)
-
-Auditoria básica (Criado_em, atualizado_em)
+• Chaves primárias e estrangeiras
+• Relacionamentos entre entidades
+• Regras de integridade de dados (CHECK, NOT NULL)
+• Auditoria básica (Criado_em, atualizado_em)
 
 📊 Consultas SQL
 
-v1.1 — Consultas básicas de análise de dados
+• v1.1 — Consultas básicas de análise de dados
 
-v1.2 — Consultas aprimoradas, utilizando:
+• v1.2 — Consultas aprimoradas, utilizando:
 
-Colunas de datas automáticas
-
-Índices para consultas mais rápidas
-
-Filtragem por regras de negócio (ex.: preços positivos)
+    • Colunas de datas automáticas
+    • Índices para consultas mais rápidas
+    • Filtragem por regras de negócio (ex.: preços positivos)
 
 As consultas contemplam análises comuns em rotinas de Análise de Dados e demonstram evolução no uso de SQL avançado.
 
 🛠️ Tecnologias Utilizadas
 
-MySQL
-
-SQL
-
-GitHub (versionamento e organização de versões)
+• MySQL
+• SQL
+• GitHub (versionamento e organização de versões)
 
 🎯 Objetivo do Projeto
 
-Desenvolver habilidades práticas em:
-
-Modelagem de banco de dados relacional
-
-Criação e manutenção de tabelas com boas práticas
-
-Escrita de scripts SQL organizados e versionados
-
-Consultas analíticas usando filtros, joins, agregações e regras de negócio
-
-Otimização de consultas com índices
-
-Auditoria básica de dados (Criado_em e atualizado_em)
-
-Versionamento de código e documentação profissional no GitHub
+• Desenvolver habilidades práticas em:
+• Modelagem de banco de dados relacional
+• Criação e manutenção de tabelas com boas práticas
+• Escrita de scripts SQL organizados e versionados
+• Consultas analíticas usando filtros, joins, agregações e regras de negócio
+• Otimização de consultas com índices
+• Auditoria básica de dados (Criado_em e atualizado_em)
+• Versionamento de código e documentação profissional no GitHub
 
 📁 Organização dos Scripts
 v1.0/
