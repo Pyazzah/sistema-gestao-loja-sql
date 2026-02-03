@@ -1,10 +1,11 @@
+![Tecnocasa Banner](screenshots/banner_tecnocasa.png)
 
 # 🛒 Sistema de Gestão de Loja – SQL
 
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-00758F?style=for-the-badge&logo=Microsoft-SQL-Server&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Portfolio](https://img.shields.io/badge/Portfolio-Project-green?style=for-the-badge)
+
 
 ---
 
